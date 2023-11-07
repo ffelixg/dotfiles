@@ -1,0 +1,6 @@
+keycode  34 = braceleft braceright braceleft braceright udiaeresis Udiaeresis
+keycode  47 = parenleft parenright parenleft parenright odiaeresis Odiaeresis
+keycode  48 = bracketleft bracketright bracketleft bracketright adiaeresis Adiaeresis
+keycode  66 = underscore Caps_Lock underscore Caps_Lock
+keycode  59 = comma semicolon comma semicolon Home Home Home Home
+keycode  60 = period colon period colon End End End End

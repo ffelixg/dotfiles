@@ -34,3 +34,17 @@ echo "qdbus org.kde.KWin /Compositor suspend" > ~/startup.sh # overrated feature
 qdbus org.kde.KWin /Compositor suspend
 chmod +x ~/startup.sh
 printf "[Desktop Entry]\nExec=~/startup.sh\nIcon=dialog-scripts\nName=startup.sh\nPath=\nType=Application\nX-KDE-AutostartScript=true" > ~/.config/autostart/startup.sh.desktop
+
+# key bindings
+mkdir -p ~/Repos
+cd ~/Repos
+git clone https://github.com/ffelixg/dotfiles.git
+ln ~/Repos/dotfiles/.Xmodmap ~/.Xmodmap
+xmodmap ~/.Xmodmap
+
+# browser
+sudo apt install apt-transport-https curl
+sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+sudo apt update
+sudo apt install brave-browser 
