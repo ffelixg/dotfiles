@@ -1,11 +1,11 @@
 sudo apt update && sudo apt -y upgrade
 
 ## azure vms
-# sudo apt-get install -y --no-install-recommends kubuntu-desktop
-# sudo apt-get install -y xrdp
-# sudo systemctl status xrdp # should be running
-# sudo adduser xrdp ssl-cert
-# sudo systemctl restart xrdp
+sudo apt-get install -y --no-install-recommends kubuntu-desktop
+sudo apt-get install -y xrdp
+sudo systemctl status xrdp # should be running
+sudo adduser xrdp ssl-cert
+sudo systemctl restart xrdp
 
 # zsh
 sudo apt install -y zsh
@@ -43,11 +43,11 @@ ln ~/Repos/dotfiles/.Xmodmap ~/.Xmodmap
 xmodmap ~/.Xmodmap
 
 # browser
-sudo apt install apt-transport-https curl
+sudo apt install -y apt-transport-https curl
 sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
-echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
 sudo apt update
-sudo apt install brave-browser 
+sudo apt install -y brave-browser 
 
 # virtualbox
 sudo apt install gcc make perl
@@ -56,7 +56,7 @@ sudo apt install gcc make perl
 # Set up apt repo
 # Add Docker's official GPG key:
 sudo apt-get update
-sudo apt-get install ca-certificates curl gnupg
+sudo apt-get install -y ca-certificates curl gnupg
 sudo install -m 0755 -d /etc/apt/keyrings
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 sudo chmod a+r /etc/apt/keyrings/docker.gpg
