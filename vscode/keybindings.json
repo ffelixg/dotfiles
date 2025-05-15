@@ -1,4 +1,5 @@
 // Place your key bindings in this file to override the defaultsauto[]
+// https://code.visualstudio.com/api/references/commands
 [
     {
         "key": "ctrl+[Backslash]",
@@ -127,5 +128,82 @@
         "key": "enter",
         "command": "-acceptSelectedSuggestion",
         "when": "acceptSuggestionOnEnter && suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && suggestionMakesTextEdit && textInputFocus"
-    }
+    },
+    {
+        "key": "ctrl+enter",
+        "command": "-github.copilot.generate",
+        "when": "editorTextFocus && github.copilot.activated && !commentEditorFocused"
+    },
+    {
+        "key": "pageup",
+        "command": "cursorMove",
+        "args": {
+            "to": "up",
+            "by": "line",
+            "value": 10
+        },
+        "when": "textInputFocus"
+    },
+    {
+        "key": "pagedown",
+        "command": "cursorMove",
+        "args": {
+            "to": "down",
+            "by": "line",
+            "value": 10
+        },
+        "when": "textInputFocus"
+    },
+    {
+        "command": "runCommands",
+        "key": "alt+pageup",
+        "args": {
+            "commands": [
+                {
+                    "command": "cursorMove",
+                    "args": {
+                        "to": "up",
+                        "by": "line",
+                        "value": 10
+                    },
+                    "when": "textInputFocus"
+                },
+                {
+                    "command": "editorScroll",
+                    "args": {
+                        "to": "up",
+                        "by": "line",
+                        "value": 10
+                    },
+                    "when": "textInputFocus"
+                },
+            ]
+        }
+    },
+    {
+        "command": "runCommands",
+        "key": "alt+pagedown",
+        "args": {
+            "commands": [
+                {
+                    "command": "cursorMove",
+                    "args": {
+                        "to": "down",
+                        "by": "line",
+                        "value": 10
+                    },
+                    "when": "textInputFocus"
+                },
+                {
+                    "command": "editorScroll",
+                    "args": {
+                        "to": "down",
+                        "by": "line",
+                        "value": 10
+                    },
+                    "when": "textInputFocus"
+                },
+            ]
+        }
+    },
 ]
